@@ -31,7 +31,7 @@ int main() {
   int tamanho_d1 = 3;
 
   //posiciona navio diagonal 1
-    for (int i = 0; i < tamanho_d1; i++){
+  for (int i = 0; i < tamanho_d1; i++){
       tabuleiro[linha_inicial_d1 + i][coluna_inicial_d1 + i] = 3;
     }
 
