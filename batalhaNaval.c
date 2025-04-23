@@ -41,16 +41,85 @@ int main() {
   int tamanho_d2 = 3;
 
   //posiciona navio diagonal 1
-    for (int i = 0; i < tamanho_d2; i++){
-      tabuleiro[linha_inicial_d2 - i][coluna_inicial_d2 + i] = 3;
-    }
+  for (int i = 0; i < tamanho_d2; i++){
+    tabuleiro[linha_inicial_d2 - i][coluna_inicial_d2 + i] = 3;
+  }
 
   //Imprimir tabuleiro
+  printf("Tabuleiro:\n\n");
+
   printf("     A B C D E F G H I J\n    ____________________\n");
   for (int i = 0; i < 10; i++) {
     printf("%02d | ", i + 1);
     for (int j = 0; j < 10; j++) {
       printf("%d ", tabuleiro[j][i]);
+    };
+    printf("\n");
+  };
+
+  //Habilidades especiais:
+
+  printf("\nHabilidades Especiais:\n");
+
+  //Cone:
+
+  printf("\nCone:\n\n");
+
+  int cone[5][3] = {0};
+  
+  for (int i = 0; i < 3; i++){
+    cone[2][0 + i] = 1;
+    for (int j = 0; j < 3; j++){
+      cone[1 + j][1] = 1;
+      for (int j = 0; j < 5; j++){
+        cone[0 + j][2] = 1;
+      }
+    }
+  }
+
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 5; j++) {
+      printf("%d ", cone[j][i]);
+    };
+    printf("\n");
+  };
+
+  //Octaedro :
+
+  printf("\nOctaedro:\n\n");
+
+  int octaedro[5][3] = {0};
+
+  for (int i = 0; i < 3; i++){
+    octaedro[2][0 + i] = 1;
+    for (int j = 0; j < 3; j++){
+      octaedro[1 + j][1] = 1;
+    }
+  }
+
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 5; j++) {
+      printf("%d ", octaedro[j][i]);
+    };
+    printf("\n");
+  };
+
+  //Cruz :
+
+  printf("\nCruz\n\n");
+
+  int cruz[5][3] = {0};
+
+  for (int i = 0; i < 3; i++){
+    cruz[2][0 + i] = 1;
+    for (int j = 0; j < 5; j++){
+      cruz[0 + j][1] = 1;
+    }
+  }
+
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 5; j++) {
+      printf("%d ", cruz[j][i]);
     };
     printf("\n");
   };
